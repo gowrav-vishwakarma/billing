@@ -1,0 +1,100 @@
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/atk-main.css" />
+<link rel="stylesheet" type="text/css" href="css/atk-custom.css" />
+<style type="text/css">
+	.atk-row + .atk-row{
+		margin-top: 0px;
+	}
+
+	.border {
+		border: 1px solid black;
+	}
+	.border-top{
+		border-top: 1px solid black;
+	}
+
+	.border-bottom {
+		border-bottom: 1px solid black;
+	}
+	.border-left{
+		border-left: 1px solid black;
+		padding-left: 2px;
+	}
+
+	.items-section{
+		/*min-height:15px;*/
+	}
+</style>
+<!-- MAIN BILL OUTER DIV -->
+<div id="<?$_name?>" class='border'>
+<!-- TOP HEADER IMAGE -->
+<div class="atk-row border-top" >
+	<div class='span12'><img src='ABCDEF.png'/><div>
+</div>
+<!-- 2 COL SECTION [ license | bill no] -->
+<div class="atk-row border-top">
+	<!-- COL 1 LICENCE SECTION  -->
+	<div class="span9">
+		<div class="atk-row"><div class='span12'>License No: 386/CID/(SSB)/2011,1G,Police(Security) Jaipur</div></div>
+		<div class="atk-row"><div class='span12'>Registration No: 157/CE/31(3)(Year 2006)</div></div>
+		<div class="atk-row"><div class='span12'>P.F.: RJ/21487</div></div>
+		<div class="atk-row"><div class='span12'>E.S.I.C.: 16000504110001018</div></div>
+		<div class="atk-row"><div class='span12'>Service Tax no: ABLPH6708ESD001</div></div>
+		<div class="atk-row"><div class='span12'>Pan No: ABLPH6708E</div></div>
+		
+	</div>
+	<!-- COL 2 BILL NO SECTION -->
+	<div class="span3 border-left">
+		<div class="atk-row"><div class="span12">Assigement: security</div></div>
+		<div class="atk-row"><div class="span12">Bill No: <?$name?></div></div>
+		<div class="atk-row"><div class="span12">Date <?$date?></div></div>
+		<div class="atk-row"><div class="span12">Period: <?$period?></div></div>
+		<div class="atk-row"><div class="span12">&nbsp;</div></div>
+		<div class="atk-row"><div class="span12">&nbsp;</div></div>
+	</div>
+</div>
+<!-- M/S PARTY SECTION -->
+<div class="atk-row border-top">
+	<div class="span12">M/S.: <b> <?$party?> </b></div>
+</div>
+<!-- SERVICE PROVIDED BY US INFO -->
+<div class="atk-row border-top"><div class="span12"><b>Service Provided by us: </b> Security Guard, Lady Guard, Ex-Serviceman, Gunmen, Sec. Consultancy etc.</div></div>
+<!-- 2 COL MAIN ITEM BY LISTER LAMPLATE -->
+<?$item_spot?>
+<div class="atk-row border-top">
+	<div class="span9">
+		Other Services:<br/>
+		Add: __________ <?$service_charge_per?> % Service Charges On Rs. <?$total_amount?> <br/>
+		Service Tax @ <?$tax?> %  on Rs. <?$grand_total?> <br/>
+		Amount in World here  <b>TOTAL</b>
+	</div>
+	<div class="span3 border-left">
+		<br/>
+		<?$service_charge?> <br/>
+		<?$tax_amount?><br/>
+		<?$net_amount?><br/>
+	</div>
+</div>
+<!-- 2COL TERMS AND CONDITIONS -->
+<div class="atk-row border-top">
+	<div class="span9">
+		<ol>
+			<li>Cash Payment only made against official printed otherwise we shall not accept any responsibility whatsoever.</li>
+			<li>All Payment must be made A/c Payee Cheque/Draf in favor of 'Corporate Security Service'</li>
+			<li>If bill is not paid on presentation the interest of 12% will be charges on billing amount.</li>
+			<li>All disputes subject to udaipur, Rajasthan Juridiction only.</li>
+			<li><b> In Case Of Any diduction in rates, Service Tax will remain same as per Rules</b></li>
+		</ol>
+	</div>
+	<div class="span3 border-left">
+		For: <b>Corporate Security Services</b>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		Manager / Accountant
+	</div>
+</div>
+</div>

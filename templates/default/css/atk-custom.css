@@ -1,0 +1,76 @@
+/* AgileToolkit 4.0.3 // http://www.agiletoolkit.org */
+/* Default Agiletoolkit's Theme */
+/* This stylesheet contains selectors for the default UI layout */
+
+
+/* --------------------------------------------------------------------
+	Default Layout
+-------------------------------------------------------------------- */
+#header:after {content:".";display:block;height:0;clear:both;visibility:hidden;font-size:0;}
+#header {padding:2em 0;margin-bottom:1em;.zoom:1;.display:block;}
+#header-right {float:right;}
+#header-right .atk-menu {float:right;}
+#header-right #atk-version {clear: both;float:right;margin-top:1em;}
+#navigation ul {overflow:hidden;}
+#navigation ul li {float:left;padding: 0.5em 1em;}
+#footer {text-align:center;}
+
+
+/* --------------------------------------------------------------------
+	Default Layout
+-------------------------------------------------------------------- */
+#atk-logo {border:none;font-size:0;line-height:0;width:163px;height:41px;overflow:hidden;}
+
+.atk-form.stacked fieldset.noborder {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	border-top: 0px;
+}
+
+.atk-form fieldset.noborder {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	border-top: 0px;
+}
+
+.atk-form.stacked fieldset.bill_rows{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	border-top: 0px;
+}
+.disabled_input{
+	color: black;
+}
+
+.billHeader div{
+	
+	border:1px solid black;
+	/*margin: 5px;*/
+}
+.company_work{
+	text-align: center;
+}
+.block{
+	
+	width: 15%;
+	height: 50px;
+}
+.border{
+border:1px solid black;
+}
+.itemsSection{
+	float: left;
+}
+.maindiv{
+	margin: 15px;
+}
+
+.items_row div{
+		border-bottom: 1px solid black;
+}
+.main-div{
+	margin:5px;
+}
