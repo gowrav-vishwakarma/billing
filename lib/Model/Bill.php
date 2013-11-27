@@ -14,20 +14,22 @@ class Model_Bill extends Model_Table {
 		$this->addField('grand_total')->type('money')->caption("Grand Total")->sortable(true);
 		$this->addField('net_amount')->type('money')->caption("Net Amount")->sortable(true);
 		$this->addField('date')->type('date');
+		$this->addField('period');
 		// $this->addField('period');
 		$this->hasMany('BillDetail','bill_id');
 		$this->hasMany('PaymentReceived','bill_id');
 
-		$this->addExpression('tax_amount')->set('ROUND(total_amount * tax / 100,2)')->type('money')->sortable(true);
+		$this->addExpression('tax_amount')->set('ROUND(grand_total * tax / 100,2)')->type('money')->sortable(true);
 		$this->addExpression('bill_amount')->set('ROUND(total_amount + (total_amount * tax / 100) + service_charge,2)')->type('money')->sortable(true);
 		;
 		$this->addExpression('received_amount')->set(function($m,$q){
 			return $m->refSQL('PaymentReceived')->sum('amount_submitted');
 		})->sortable(true);
 
-		$this->addExpression('period')->set( "DATE_FORMAT(`date`,'%M %y')");
+		// $this->addExpression('period')->set( "DATE_FORMAT(`date`,'%M %y')");
 
 		$this->addHook('beforeDelete',$this);
+		$this->addHook('beforeSave',$this);
 
 		$this->add('dynamic_model/Controller_AutoCreator');
 
@@ -37,9 +39,9 @@ class Model_Bill extends Model_Table {
 		$this->ref('BillDetail')->deleteAll();
 	}
 
-	// function beforeSave(){
-	// 	throw $this->exception('HI there','ValidityCheck')->setField('bill_no');
-	// }
+	function beforeSave(){
+		$this['net_amount']=round($this['net_amount']);
+	}
 
 	function newBillNo(){
 
