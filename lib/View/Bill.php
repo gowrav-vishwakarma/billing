@@ -40,7 +40,7 @@ class View_Bill extends View{
 
 		$form->addSeparator( 'atk-row noborder' );
 		$form->addField('DatePicker','date')->set($bill_model['date'])->template->tryset('row_class','span6');
-		// $form->addField('line','period')->template->tryset('row_class','span6');
+		$form->addField('line','period')->template->tryset('row_class','span6');
 		$form->addSeparator( 'atk-row noborder' );
 		$form->add('HR');
 
@@ -192,6 +192,7 @@ class View_Bill extends View{
 
 			$bill['name']=$new_bill_no;
 			$bill['party_id']=$form['party_name'];
+			$bill['period']=$form['period'];
 			$bill['tax']=$form['tax'];
 			$bill['session_id']=$this->add('Model_CurrentSession')->tryLoadAny()->get('id');
 			$bill['date']=$form['date'];
@@ -245,7 +246,7 @@ class View_Bill extends View{
 			$service_charge=$total_amount*$service_charge_per/100;
 			$grand_total=$total_amount+$service_charge;
 			$servicetax_per = $form['tax'];
-			$service_tax= ($grand_total * ($servicetax_per!=''?:0) /100.00);
+			$service_tax= ($grand_total * $servicetax_per /100.00);
 			$net_amount = $grand_total + $service_tax ;
 
 			$bill['total_amount']=$total_amount;
