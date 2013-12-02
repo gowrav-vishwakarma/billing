@@ -99,7 +99,7 @@ class page_billreport extends Page {
 		$grid->addColumn('Button','receive');
 		$pbtn=$grid->addColumn('Button','print');
 		$grid->addColumn('Button','edit');
-		$grid->addColumn('Confirm','delete');
+		// $grid->addColumn('Confirm','delete');
 		$grid->addMethod('format_checkBtn',function($grid,$field){
 			if($grid->model['bill_amount'] <= $grid->model['received_amount'])
 				$grid->current_row_html[$field]='';
